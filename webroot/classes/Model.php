@@ -7,7 +7,7 @@ $db = new DB;
 $db->addConnection(
     [
     'driver' => 'mysql',
-    'host' => 'localhost',
+    'host' => 'database',
     'database' => 'maturitni-prace',
     'username' => 'root',
     'password' => 'root',

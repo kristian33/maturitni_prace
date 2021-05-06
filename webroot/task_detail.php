@@ -1,12 +1,12 @@
 <?php
-use Klimo\TaskModel;
+use Klimo\UsersModel;
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR . 'header.php';
 ?>
 <div class="content-wrapper" style="min-height: 855px;">
   <!-- Content Header (Page header) -->
 
   <?php
-if (in_array($roleName, ['ADMINISTRÁTOR', 'ZADAVATEL'])) {
+if (in_array($roleName, ['ADMINISTRÁTOR', 'REALIZÁTOR'])) {
     $idTask = filter_input(INPUT_GET, 'id_task');
     if (isset($idTask)) {
         ?>
@@ -38,7 +38,6 @@ $task = TaskModel::getTask($idTask);
         <span class="label-input100">Do kdy</span>
         <br>
         <b><?php echo "$task->datetime_to"; ?></b>
-
         <div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
@@ -49,9 +48,15 @@ $task = TaskModel::getTask($idTask);
 } else {
         echo "Není úkol k vypsání.";
     }
-}
-
+  }
 ?>
+
+
+
+
+
+
+
 
 <?php
 $content = filter_input(INPUT_POST, 'content');
@@ -65,14 +70,13 @@ if (isset($submit)) {
         $message .= 'stránka byla odeslána LOL LOL';
     }
 }
-
 ?>
      </div>
               </div>
               <span class="contact100-form-title">
 					    Komentáře
 				      </span>
-    <form action="task_detail.php?id_task=<?php echo "$task->id_task"; ?>" method="post">
+              <form action="task_detail.php?id_task=<?php echo $task->id_task; ?>" method="post">
               <div class="wrap-input100 validate-input">
 					    <span class="label-input100">Vaše zpráva</span>
 					    <input class="input100" type="text" id="content" name="content" placeholder="">
@@ -100,7 +104,7 @@ foreach ($comments as $comment) {
       <td> <?php echo $comment->created_at; ?> </td>
       </tr>
         <?php
-}
+       }
 ?>
     </tbody>
         </table>

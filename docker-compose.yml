@@ -2,14 +2,15 @@ version: "3.3"
 
 services: 
     webserver: 
-        image: php:8.0.3-apache
+        build: '.docker/webserver/'
         ports: 
            - 80:80
         volumes: 
-            - ./web:/var/www/html
+            - ./webroot:/var/www/html
             
-    db:
+    database:
         image: mysql:latest
+        restart: always
         volumes: 
             - data:/var/lib/mysql
         environment:

@@ -17,7 +17,6 @@
           <a href="" class="d-block">Kristián Klimek</a>
         </div>
       </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
               <ul class="nav">
@@ -33,12 +32,16 @@
                   <p>Přidání úkolu</p>
                 </a>
               </li>
+              <?php
+              if (in_array($roleName, ['ADMINISTRÁTOR'])) {
+                ?>
               <li class="nav-item">
                 <a href="./addUser.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Přidání uživatele</p>
                 </a>
               </li>
+              <?php } ?>
               <li class="nav-item">
                 <a href="./listUsers.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

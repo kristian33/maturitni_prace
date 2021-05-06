@@ -1,5 +1,5 @@
 <?php
-use Klimo;
+use Klimo\TaskModel;
 use core\plugininfo\filter;
 include_once "inc/header.php";
 ?>
@@ -10,6 +10,7 @@ include_once "inc/header.php";
     $datetime_from = filter_input(INPUT_POST, 'datetime_from');
     $datetime_to = filter_input(INPUT_POST, 'datetime_to');
 	$id_tasklist = filter_input(INPUT_POST, 'id_tasklist');
+	$tasklists = Klimo\TaskModel::getTasklists();
     $submit = filter_input(INPUT_POST, 'submit');
     $message = 'stránka byla odeslána';
 
@@ -55,8 +56,14 @@ include_once "inc/header.php";
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "">
-					<span class="label-input100">ID Úkolu</span>
-					<input class="input100" type="number" id="id_tasklist" name="id_tasklist" value="" placeholder="">
+					<span class="label-input100">Výpis úkolů</span>
+					<div class="wrap-input100 validate-input">
+				<select class="input100" id="id_tasklist" name="id_tasklist">
+				<?php foreach ($tasklists as $tasklist) {
+            	?>
+    			<option class="input100" value=<?php echo $tasklist->id_tasklist; ?> id="id_tasklist"><?php echo $tasklist->name;?> </option>
+				<?php } ?>
+  				</select>
 				</div>
 
 				<div class="container-contact100-form-btn">

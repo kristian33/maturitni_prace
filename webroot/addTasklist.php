@@ -1,5 +1,5 @@
 <?php
-use Klimo;
+use Klimo\TaskModel;
 use core\plugininfo\filter;
 include_once "inc/header.php";
 ?>
@@ -30,7 +30,7 @@ include_once "inc/header.php";
 		<div class="wrap-contact100">
 			<form action="addTasklist.php" method="post" class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					Přidání úkolu
+					Přidat výpis úkolu
 				</span>
 				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Název úkolu</span>
