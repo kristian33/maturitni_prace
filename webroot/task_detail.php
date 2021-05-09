@@ -11,7 +11,7 @@ if (in_array($roleName, ['ADMINISTRÁTOR', 'REALIZÁTOR'])) {
     if (isset($idTask)) {
         ?>
         <?php
-$task = TaskModel::getTask($idTask);
+$task = Klimo\TaskModel::getTask($idTask);
         ?>
 
          	<div class="container-contact100">
@@ -91,7 +91,7 @@ if (isset($submit)) {
 
 </div>
 <?php
-$comments = TaskModel::getComments();
+$comments = Klimo\TaskModel::getComments();
 ?>
 <table class="table">
 <tbody>

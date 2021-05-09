@@ -65,9 +65,9 @@ if (in_array($roleName, ['ADMINISTRÁTOR'])) {
 				<div class="wrap-input100 validate-input">
 				<span class="">Role</span>
 				<select class="input100 id="id_role" name="id_role">
-    			<option class="input100" value="2" id="id_role">Zadavatel</option>
-    			<option class="input100" value="3" id="id_role">Realizátor</option>
-    			<option class="input100" value="4" id="id_role">Administrátor</option>
+    			<option class="input100" value="2" id="id_role">ZADAVATEL</option>
+    			<option class="input100" value="3" id="id_role">REALIZÁTOR</option>
+    			<option class="input100" value="4" id="id_role">ADMINISTRÁTOR</option>
   				</select> <br><br>
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
